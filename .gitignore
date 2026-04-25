@@ -1,0 +1,6 @@
+# Ignore local environment files
+backend/.env
+.env
+
+# Ignore local MongoDB database files
+backend/data/
