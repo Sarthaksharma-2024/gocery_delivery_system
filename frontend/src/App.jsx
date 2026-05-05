@@ -12,6 +12,7 @@ import Logout from './components/Logout';
 import CheckoutPage from './components/Checkout'
 import MyOrders from './components/OrderPage'
 import VerifyPaymentPage from './page/VerifyPaymentPage';
+import ChatbotComponent from './components/Chatbot';
 
 // ScrollToTop component: listens to route changes and scrolls window to top
 const ScrollToTop = () => {
@@ -71,6 +72,8 @@ const App = () => {
         {/* Fallback: redirect to home */}
         <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
+
+      <ChatbotComponent />
     </CartProvider>
   );
 };

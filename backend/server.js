@@ -11,6 +11,7 @@ import userRouter from './routes/userRoute.js';
 import itemrouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import orderrouter from './routes/orderRoute.js';
+import chatbotRouter from './routes/chatbotRoute.js';
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -23,8 +24,18 @@ const __dirname = path.dirname(__filename);
 app.use(
     cors({
         origin: (origin, callback) => {
-            const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174'];
-            if (!origin || allowedOrigins.includes(origin)) {
+            if (!origin) {
+                callback(null, true);
+                return;
+            }
+            const allowedOrigins = [
+                'http://localhost:5173',
+                'http://localhost:5174',
+                'http://localhost:5175',
+                'http://localhost:5176',
+                'http://localhost:5177',
+            ];
+            if (allowedOrigins.includes(origin) || origin.startsWith('http://localhost:517')) {
                 callback(null, true);
             } else {
                 callback(new Error('Not allowed by CORS'));
@@ -45,6 +56,7 @@ app.use('/api/cart', authMiddleware, cartRouter);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/items', itemrouter)
 app.use('/api/orders', orderrouter)
+app.use('/api/chatbot', chatbotRouter)
 
 app.get('/', (req, res) => {
     res.send('API Working');

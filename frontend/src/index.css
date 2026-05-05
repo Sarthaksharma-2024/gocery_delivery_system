@@ -3,3 +3,75 @@
 ::-webkit-scrollbar{
     display: none;
 }
+
+/* Chatbot Styles */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.option-button {
+  background-color: #5ccc9d;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.option-button:hover {
+  background-color: #4a9d7a;
+}
+
+.alternatives-container {
+  max-width: 300px;
+}
+
+.alternative-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.alternative-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.alternative-details h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.alternative-details p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.add-to-cart-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ff5252;
+}
